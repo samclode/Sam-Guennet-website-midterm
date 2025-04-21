@@ -1,0 +1,213 @@
+*{
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE & Edge */
+}
+*::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari, Opera */
+}
+@font-face {
+    font-family: 'typewriter';
+    src: url('/general/fonts/dehinted-AmericanTypewriter.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'franklin gothic heavy';
+    src: url('/general/fonts/FRAHV.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'rockwell';
+    src: url('/general/fonts/ROCK.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'frankin gothic condensed';
+    src: url('/general/fonts/Franklin\ Gothic\ Condensed.woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+body{
+    background-color: #ea5239;
+   height: 100vh;
+   display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow: hidden; 
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    
+}
+h1{
+    color: black;
+    font-size:3.5vw;
+    font-family: 'franklin gothic heavy', sans-serif;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    left: 00;
+    top: 0;
+    position: fixed;
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari et Opera */
+  }
+.imglien{
+    position: fixed;
+    top: 2vh;
+    left: 3vw;
+    height: 10vh;
+    z-index: 500;
+    display: none;
+}
+
+#bord{
+    border: 2.5px solid black;
+    padding: 1px 8px 1px 8px;
+    color: rgb(0, 0, 0);
+    z-index: 1000;
+}
+
+#title{
+    font-family: 'frankin gothic condensed';
+
+}
+.barrenav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    position: fixed;
+    right: 1vw;
+    top: 1vh;
+    z-index: 1000;
+}
+
+h2{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+    margin: 0;
+}
+h3{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+}
+a{
+    text-decoration: none;  /* Enlève le soulignement */
+    color: inherit;         /* Utilise la couleur du texte parent (comme un texte normal) */
+    cursor: pointer;       /* Garder la main au survol (si tu veux que ce soit cliquable) */
+  }
+a:focus {
+    outline: none;          /* Enlève le contour de focus */
+}  
+a:hover {
+    color: inherit;         /* Garde la même couleur au survol */
+    text-underline-offset: 5px;
+    text-decoration: none;
+}
+.contact{
+    font-family: 'typewriter';
+    position: fixed; 
+        right:10vw;
+        top: 50vh;
+        font-size: clamp( 0.1rem, 1vw, 2rem);
+        transform: translateY(-48%);
+        z-index: 500;
+        display: none;
+}
+.presentation{
+    font-family: 'typewriter';
+    position:fixed;
+    left: 2vw;
+    top: 140px;
+    display: flex;
+    margin-top: 0;
+    height: 80vh;
+    width: 250px;
+
+    margin-left: 0;
+    flex-direction: column;
+    overflow: auto;                  /* active le scroll */
+    -ms-overflow-style: none;       /* IE et Edge */
+    scrollbar-width: none; 
+    justify-content: flex-start;
+    gap: 0;
+    text-align: justify;
+    background-color: transparent;
+}
+.cv{
+    position: fixed;
+    top: 55vh;
+    transform: translateY(-50%);
+    left:0;
+    width: 50vw;
+    overflow: auto;
+    height: 80vh;
+    overflow: auto;
+    display: none;
+
+}
+.cv img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    overflow: hidden  ;
+    object-position: center;
+    z-index: -1;
+}
+.links{
+    font-family: 'rockwell';
+    background-color: transparent;
+    left  : 2vw;
+    top: 100px;
+    position: absolute;
+
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5px;
+    align-items: right;
+    transform: translateY(-50%);
+    height: 3vh;
+    width: 45vw;
+    min-height: 18px;
+}
+.flexlink{
+    border: 1.5px solid black;
+    padding: 1px 8px 1px 8px;
+    color: rgb(0, 0, 0);
+    z-index: 1000;
+    font-size: clamp( 0.5rem, 0.8vw, 3rem);
+}
+@media (max-width: 768px) {
+    .cv
+    {display: none;}
+    .presentation{
+        top : 70px;
+        left: 1vw;
+        height: 90vh;
+    }
+    .links{
+  top: 50px;
+  flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 50px;
+    width: 250px;
+    margin: 0;
+    left: 1vw;
+    }
+    .flexlink{
+        font-size: 7.5px
+    }
+}

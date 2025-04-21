@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'typewriter';
+    src: url('../general/fonts/dehinted-AmericanTypewriter.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'franklin gothic heavy';
+    src: url('../general/fonts/FRAHV.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'rockwell';
+    src: url('../general/fonts/ROCK.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'frankin gothic condensed';
+    src: url('../general/fonts/Franklin\ Gothic\ Condensed.woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+body{
+    background-color: #ea5239;
+   height: 100vh;
+   display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow: hidden;
+}
+
+#bord{
+    border: 2.5px solid black;
+    padding: 1px 8px 1px 8px;
+    color: rgb(0, 0, 0);
+}
+#title{
+    font-family: 'frankin gothic condensed';
+
+}
+
+.barrenav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    position: absolute;
+    right: 1vw;
+    top: 1vh;
+}
+h2{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+    margin: 0;
+}
+h3{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+}
+a{
+    text-decoration: none;  /* Enlève le soulignement */
+    color: inherit;         /* Utilise la couleur du texte parent (comme un texte normal) */
+    cursor: pointer;       /* Garder la main au survol (si tu veux que ce soit cliquable) */
+  }
+a:focus {
+    outline: none;          /* Enlève le contour de focus */
+}  
+a:hover {
+    color: inherit;         /* Garde la même couleur au survol */
+    text-decoration: none;  /* Pas de soulignement au survol */
+    text-underline-offset: 5px;
+
+}
+p{
+    margin: 0 0 0px 0;
+    font-family:'typewriter';
+    font-size: x-large;
+    color: #ea5239;
+    text-shadow:
+    -0.5px -0.5px 0 black,
+     0.5px -0.5px 0 black,
+    -0.5px  0.5px 0 black,
+     0.5px  0.5px 0 black;
+    font-size:clamp( 1rem, 4vw, 4rem);
+
+}
+p:hover{
+    text-decoration: none;
+    color: black;
+    text-shadow: none;
+    
+}
+.maincontainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 48.1vw;
+    height: 65vh;
+    flex-direction: column;
+    margin-right: 0;
+    overflow: scroll;
+    background-color: #ea5239;
+    overflow: hidden;
+
+}
+.imglien{
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+    height: 10vh;
+    z-index: 500;
+}
+.hoverimage{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-48%);
+    left: 0;
+    width: 50vw;
+    display: none;
+    z-index: 100;
+}
+#unkapani:hover + .hoverimage {
+    display: block;
+}
+#ordinaryheritage:hover + .hoverimage {
+    display: block;
+}
+#conservatory:hover + .hoverimage {
+    display: block;
+}
+#petiteceinture:hover + .hoverimage {
+    display: block;
+}
+#oldbarn:hover + .hoverimage {
+    display: block;
+}
+

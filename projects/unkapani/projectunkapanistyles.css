@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+@font-face {
+    font-family: 'typewriter';
+    src: url('/general/fonts/dehinted-AmericanTypewriter.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'franklin gothic heavy';
+    src: url('/general/fonts/FRAHV.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'rockwell';
+    src: url('/general/fonts/ROCK.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'frankin gothic condensed';
+    src: url('/general/fonts/Franklin\ Gothic\ Condensed.woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+body{
+    background-color: #ea5239;
+   height: 100vh;
+   display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+}
+.imglien{
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+    height: 10vh;
+    z-index: 500;
+}
+
+#bord{
+    border: 2.5px solid black;
+    padding: 1px 8px 1px 8px;
+    color: rgb(0, 0, 0);
+}
+#title{
+    font-family: 'frankin gothic condensed';
+
+}
+
+.barrenav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    position: absolute;
+    right: 1vw;
+    top: 1vh;
+    z-index: 1000;
+}
+h2{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+    margin: 0;
+}
+h3{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+}
+a{
+    text-decoration: none;  /* Enlève le soulignement */
+    color: inherit;         /* Utilise la couleur du texte parent (comme un texte normal) */
+    cursor: pointer;       /* Garder la main au survol (si tu veux que ce soit cliquable) */
+  }
+a:focus {
+    outline: none;          /* Enlève le contour de focus */
+}  
+a:hover {
+    color: inherit;         /* Garde la même couleur au survol */
+    text-decoration: underline;  /* Pas de soulignement au survol */
+    text-underline-offset: 5px;
+}
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    
+}
+.maincontainer{
+    margin-left: 0vh;
+    display: flex;
+  flex-direction: column;
+    height: 98vh;
+  width: 53.5vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  background-color: #ea5239;
+  overflow: auto;                  /* active le scroll */
+  -ms-overflow-style: none;       /* IE et Edge */
+  scrollbar-width: none;          
+}
+  .maincontainer :-webkit-scrollbar {
+    display: none; 
+}
+.image{
+    scroll-snap-align: start;
+    flex: 0 0 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img {
+    height: auto;
+    max-height: 95vh;
+    width: 53.5vw;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+.maintext{
+    display: flex;
+    background-color: #ea5239;
+    margin-top: 7vh;
+    height: 80vh;
+    width: 25vw;
+    margin-left: 2vw;
+    max-width: 250px;
+    flex-direction: column;
+    overflow: auto;                  /* active le scroll */
+    -ms-overflow-style: none;       /* IE et Edge */
+    scrollbar-width: none; 
+    justify-content: flex-start;
+    gap: 0;
+    
+}
+.titlearticle{
+    font-family: 'franklin gothic heavy';
+    font-size: x-large;
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 0;
+}
+
+.subtitlearticle{
+    font-family: 'frankin gothic condensed';
+    font-size: medium;
+    margin-top: 0;
+    margin-bottom: 5vh;
+    gap: 0;
+}
+
+.bodyarticle{
+    font-family: 'typewriter';
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 0;
+    text-align: justify;
+}
+.nextproject{
+    position: fixed;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    font-size: 2.5vh;
+    font-family: 'rockwell' ;
+    z-index: 1000;
+}

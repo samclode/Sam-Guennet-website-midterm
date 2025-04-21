@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'typewriter';
+    src: url('../general/fonts/dehinted-AmericanTypewriter.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}@font-face {
+    font-family: 'franklin gothic heavy';
+    src: url('../general/fonts/FRAHV.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'rockwell';
+    src: url('../general/fonts/ROCK.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'frankin gothic condensed';
+    src: url('../general/fonts/Franklin\ Gothic\ Condensed.woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+body{
+    background-color: #ea5239;
+   height: 80vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.barrenav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    position: fixed;
+    right: 1vw;
+    top: 5vh;	
+}
+h1{
+    color: black;
+    font-size:3.5vw;
+    font-family: 'franklin gothic heavy', sans-serif;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    left: 00;
+    top: 0;
+    position: fixed;
+}
+h2{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+}
+h3{
+    color: black;
+    font-size: clamp( 0.1rem, 2vw, 3rem);
+    font-family: 'rockwell';
+}
+a{
+    text-decoration: none;  /* Enlève le soulignement */
+    color: inherit;         /* Utilise la couleur du texte parent (comme un texte normal) */
+    cursor: pointer;       /* Garder la main au survol (si tu veux que ce soit cliquable) */
+  }
+a:focus {
+    outline: none;          /* Enlève le contour de focus */
+}  
+a:hover {
+    color: inherit;         /* Garde la même couleur au survol */
+    text-decoration: underline;  /* Pas de soulignement au survol */
+}
+.maincontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    height: 30vh;
+    margin: 0 auto;
+    margin-top: 20vh;
+    margin-left: 19vw;
+    
+}
+
+.architecture{
+    font-family: 'frankin gothic condensed';
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vh;
+    overflow: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    align-items: right;
+}
+.architectureitem{
+margin: 0 0 25px 0;
+color: black;
+}
+.architectureitem:hover{
+    color: black;
+}
+.architectureitem:visited{
+    color: black;
+    
+
+}
+.architectureitem:focus{
+outline: none;
+}
+.artwork{
+    font-family: 'frankin gothic condensed';
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vh;
+    overflow: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    align-items: right;
+}
+.research{
+    font-family: 'frankin gothic condensed';
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vh;
+    overflow: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    align-items: right;
+}
+P{
+margin: 0 0 1px 0;
+transition: text-decoration 0.3 ease;
+font-family: 'rockwell';
+font-size:medium;
+}
+ img{
+    width: 50vw;
+
+}
+
+.maincontainer2 {
+    position: fixed;
+    top: 40vh; 
+    transform: translateY(-48%);
+    left: 20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+align-items: center;
+    width: 50vw;
+    height: 30vh;
+}
+.maincontainer2 img {
+
+    width: 40vw;;
+
+}
+    #img1 {
+        position: absolute;
+        top: 0px;
+        left: 15vw;
+    }
+    #img2 {
+        position: absolute;
+        top: -20vh;
+        left: 30vw;
+        width: 35vw;
+    }
+    #img3 {
+        position: absolute;
+        top: -15vh;
+        left: 48vw;
+        width: 35vw;
+    }
+
+    .pcat{
+        display: none;
+        margin: 0;
+        font-family: 'typewriter';
+        font-size:3vw;
+        position: fixed;
+        top: 20vh;
+        left: -18vw;
+        width: 50vw;
+        height: 30vh;
+    }
+    .img1:hover .pcat,
+    .img2:hover .pcat,
+    .img3:hover .pcat {
+        display: block;
+    }
+
+    .img1:hover ,
+    .img2:hover ,
+    .img3:hover {
+        z-index: 1000;
+    }
