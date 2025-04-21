@@ -194,6 +194,7 @@ align-items: center;
         left: -18vw;
         width: 50vw;
         height: 30vh;
+        z-index: -1;
     }
     .img1:hover .pcat,
     .img2:hover .pcat,
