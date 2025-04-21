@@ -3,30 +3,30 @@
     padding: 0;
     box-sizing: border-box;
   }
-@font-face {
+  @font-face {
     font-family: 'typewriter';
-    src: url('../general/fonts/dehinted-AmericanTypewriter.woff2');
+    src: url('../../general/fonts/dehinted-AmericanTypewriter.woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'franklin gothic heavy';
-    src: url('../general/fonts/FRAHV.woff2') format('woff2');
+    src: url('../../general/fonts/FRAHV.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'rockwell';
-    src: url('../general/fonts/ROCK.woff2') format('woff2');
+    src: url('../../general/fonts/ROCK.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'frankin gothic condensed';
-    src: url('/general/fonts/Franklin\ Gothic\ Condensed.woff2');
+    src: url('../../general/fonts/Franklin\ Gothic\ Condensed.woff2');
     font-weight: normal;
     font-display: swap;
 }
