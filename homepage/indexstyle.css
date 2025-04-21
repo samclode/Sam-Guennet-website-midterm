@@ -73,7 +73,7 @@ a:focus {
 }  
 a:hover {
     color: inherit;         /* Garde la même couleur au survol */
-    text-decoration: underline;  /* Pas de soulignement au survol */
+    text-decoration: none;  /* Pas de soulignement au survol */
 }
 .maincontainer{
     display: flex;
