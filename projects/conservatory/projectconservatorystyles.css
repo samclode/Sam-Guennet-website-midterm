@@ -89,8 +89,7 @@ a:focus {
 }  
 a:hover {
     color: inherit;         /* Garde la même couleur au survol */
-    text-decoration: underline;  /* Pas de soulignement au survol */
-    text-underline-offset: 5px;
+    text-decoration: none;  /* Pas de soulignement au survol */
 }
 body{
     display: flex;
