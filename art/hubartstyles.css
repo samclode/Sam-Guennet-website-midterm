@@ -101,8 +101,8 @@ a:focus {
     outline: none;          /* Enlève le contour de focus */
 }  
 a:hover {
-    color: inherit;         /* Garde la même couleur au survol */
-    text-decoration: underline;  /* Pas de soulignement au survol */
+    color: inherit;         
+    text-decoration: underline;  
     text-underline-offset: 5px;
     text-decoration: none;
 }
