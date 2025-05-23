@@ -251,9 +251,7 @@ align-items: center;
   transition: transform 0.2s;
 }
 
-.image:hover {
-  animation: float 3s ease-in-out infinite;
-}
+
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -262,3 +260,22 @@ align-items: center;
 .image {
   transition: transform 0.15s ease-out;
 }
+
+/* Style du cercle noir qui suit le curseur */
+#cursor-circle {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: black;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+}
+
+/* Cache le curseur quand on survole une image dans un lien */
+a:hover img {
+  cursor: none;
+}
+

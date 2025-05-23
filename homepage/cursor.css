@@ -1,0 +1,15 @@
+body{
+  cursor: url('../general/vertopal.com_45c8968933054464a6e8b057c83ba0c0zDc076h5m3ouT1fE-1.cur') 5 5, auto;
+
+
+}
+a:hover {
+  cursor: url('../general/vertopal.com_3f1f6467240b48609dac754caf413776-4.cur') 8 8, pointer;
+}
+a {
+  cursor: url('../general/vertopal.com_3f1f6467240b48609dac754caf413776-4.cur') 8 8, pointer;
+}
+
+a:active {
+  cursor: url('../general/vertopal.com_3f1f6467240b48609dac754caf413776-4.cur') 8 8, grabbing;
+}
