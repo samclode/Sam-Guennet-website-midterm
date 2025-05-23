@@ -180,16 +180,20 @@ body{
     font-family: 'rockwell' ;
     z-index: 1000;
 }
-.previousproject{
-    position: fixed;
-    left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    writing-mode: vertical-rl;
-    font-size: 2.5vh;
-    font-family: 'rockwell' ;
-    z-index: 1000; 
+.previousproject {
+  position: fixed;
+  left: 0;
+  top: 50%;                    /* on prend la moitié de la hauteur de la fenêtre */
+  transform-origin: center center;  
+  transform: translateY(-50%)   /* on remonte de la moitié de sa hauteur */ 
+             rotate(180deg);    /* puis on retourne */
+  writing-mode: vertical-rl;
+  white-space: nowrap;          /* pas de retour à la ligne */
+  font-size: 2.5vh;
+  font-family: 'rockwell';
+  z-index: 1000;
 }
+
 
 .plusinfos{
     background-color: transparent;
@@ -238,5 +242,38 @@ body{
   background-size: contain;
   z-index: 9999;
   display: none;
+}
+#bord,
+.barrenav h2,
+.barrenav h3 {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-family: 'rockwell';
+  transition: color 0.05s ease;
+  z-index: 1;
+}
+#bord::after,
+.barrenav h2::after,
+.barrenav h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  z-index: -1;
+  transition: width 0.05s ease;
+}
+#bord:hover,
+.barrenav h2:hover,
+.barrenav h3:hover {
+  color: #ea5239; /* Orange */
+}
+#bord:hover::after,
+.barrenav h2:hover::after,
+.barrenav h3:hover::after {
+  width: 100%;
 }
 

@@ -134,3 +134,37 @@ p:hover{
 #roman:hover + .hoverimage {
     display: block;
 }
+#bord,
+.barrenav h2,
+.barrenav h3 {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-family: 'rockwell';
+  transition: color 0.05s ease;
+  z-index: 1;
+}
+#bord::after,
+.barrenav h2::after,
+.barrenav h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  z-index: -1;
+  transition: width 0.05s ease;
+}
+#bord:hover,
+.barrenav h2:hover,
+.barrenav h3:hover {
+  color: #ea5239; /* Orange */
+}
+#bord:hover::after,
+.barrenav h2:hover::after,
+.barrenav h3:hover::after {
+  width: 100%;
+}
+

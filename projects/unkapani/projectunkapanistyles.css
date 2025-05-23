@@ -180,3 +180,86 @@ body{
     font-family: 'rockwell' ;
     z-index: 1000;
 }
+.plusinfos{
+    background-color: transparent;
+    position: relative;
+    margin: 15px;
+    top: -25.5vh;
+    width: 10vw;
+}
+#plus{
+    font-family: 'rockwell';
+    font-size: 14px;
+    color: black;
+}
+#plus:hover{
+    text-decoration: underline;
+}
+.inf{
+    position: absolute;
+    font-family: 'typewriter';
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    margin-left: 22px;
+
+}
+#infosection {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, opacity 0.2s ease;
+}
+
+#infosection.visible {
+    max-height: 300px; /* assez grand pour contenir le contenu */
+
+}
+#plus img{
+    width: 1.2vw;
+    height: 1.2vh;
+    transition: transform 0.2s ease; /* animation fluide */
+}
+#custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 9999;
+  display: none;
+}
+
+#bord,
+.barrenav h2,
+.barrenav h3 {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-family: 'rockwell';
+  transition: color 0.05s ease;
+  z-index: 1;
+}
+#bord::after,
+.barrenav h2::after,
+.barrenav h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  z-index: -1;
+  transition: width 0.05s ease;
+}
+#bord:hover,
+.barrenav h2:hover,
+.barrenav h3:hover {
+  color: #ea5239; /* Orange */
+}
+#bord:hover::after,
+.barrenav h2:hover::after,
+.barrenav h3:hover::after {
+  width: 100%;
+}
+

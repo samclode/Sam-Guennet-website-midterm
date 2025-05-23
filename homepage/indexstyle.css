@@ -52,6 +52,7 @@ h1{
     left: 00;
     top: 0;
     position: fixed;
+    z-index: 1;
 }
 h2{
     color: black;
@@ -167,20 +168,20 @@ align-items: center;
 
 }
     #img1 {
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 15vw;
     }
     #img2 {
-        position: absolute;
-        top: -20vh;
+        position: fixed;
+        top: -15vh;
         left: 30vw;
         width: 35vw;
     }
     #img3 {
-        position: absolute;
+        position: fixed;
         top: -15vh;
-        left: 48vw;
+        left: 40vw;
         width: 35vw;
     }
 
@@ -202,8 +203,62 @@ align-items: center;
         display: block;
     }
 
-    .img1:hover ,
-    .img2:hover ,
-    .img3:hover {
-        z-index: 1000;
-    }
+
+    #bord,
+.barrenav h2,
+.barrenav h3 {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-family: 'rockwell';
+  transition: color 0.05s ease;
+  z-index: 1;
+}
+#bord::after,
+.barrenav h2::after,
+.barrenav h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  z-index: -1;
+  transition: width 0.05s ease;
+}
+#bord:hover,
+.barrenav h2:hover,
+.barrenav h3:hover {
+  color: #ea5239; /* Orange */
+}
+#bord:hover::after,
+.barrenav h2:hover::after,
+.barrenav h3:hover::after {
+  width: 100%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.image {
+  position: absolute;
+  cursor: grab;
+  user-select: none;
+  /* plus d'animation par défaut ! */
+  transition: transform 0.2s;
+}
+
+.image:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.image {
+  transition: transform 0.15s ease-out;
+}
