@@ -8,15 +8,32 @@
 </head>
 <body>
     <a href="../../index.html"><img src="../../general/monogramme.svg" alt="" class="imglien"></a>
-    <div class="barrenav">
-        <h2 id="bord"> <a href="../../projects/hubprojects.html">Architecture</a></h2>
+        <div class="barrenav lang-en">
+        <h2 id="bord"> Architecture</h2>
         <a href="../../art/hubart.html"><h2>Artworks</h2></a>
         <a href="../../research/researchhub.html"><h2>Research</h2></a>
         <a href="../../about/about.html"><h3>About</h3></a>
+                <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
     </div>
-    </div></a>
-    <a href="../conservatory/projectconservatory.html"><div class="previousproject">
-        Conservatory in Ivry
+        <div class="barrenav lang-fr">
+        <h2 id="bord"> Architecture</h2>
+        <a href="../../art/hubart.html"><h2>Art</h2></a>
+        <a href="../../research/researchhub.html"><h2>Recherche</h2></a>
+        <a href="../../about/about.html"><h3>A propos</h3></a>
+                <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
+    </div>
+
+    <a href="../conservatory/projectconservatory.html" class="lang-en"><div class="previousproject">
+        See Conservatory in Ivry
+     </div></a>
+        <a href="../conservatory/projectconservatory.html" class="lang-fr"><div class="previousproject">
+       Voir Conservatoire à Ivry
      </div></a>
     </div>
     <div class="maincontainer">
@@ -26,7 +43,18 @@
         
     </div>
        
-    <div class="maintext">
+    <div class="maintext lang-fr">
+        <div class="titlearticle">
+            <p>Vieille grange</p>
+        </div>
+        <div class="subtitlearticle">
+            <p>Saint-Marcel, 36200</p>
+        </div>
+        <div class="bodyarticle">
+            <p>Outre le travail sur les projections architecturales, cet exercice a permis de développer des compétences techniques en matière de création d’images numériques et de conception d’un permis de construire.</p>
+        </div>
+    </div>
+        <div class="maintext lang-en">
         <div class="titlearticle">
             <p>Old Barn</p>
         </div>
@@ -37,9 +65,10 @@
             <p>A former agricultural barn is now home to a family of 4. As well as working on architectural projections, this exercise involved developing technical skills in creating digital images and designing a building permit.</p>
         </div>
     </div>
-        <div class="plusinfos"> 
-        <p id="plus" onclick="rotate()"> <img src="../../general/voirplus.svg" alt="" id="plusicon"></a>More infos</p>
-        <div class="inf" id="infosection">
+
+    <div class="plusinfos lang-en">
+        <p id="plus-1" onclick="rotate('plusicon-1','infosection-1')"> <img src="../../general/voirplus.svg" alt="" id="plusicon-1"></a>More infos</p>
+        <div class="inf" id="infosection-1">
             <br><p>internship</p>
             <p>2024</p>            
             <p>Saint Marcel, France</p>
@@ -48,7 +77,23 @@
 
         </div>
     </div>
+    <div class="plusinfos lang-fr">
+        <p id="plus-2" onclick="rotate('plusicon-2','infosection-2')"> <img src="../../general/voirplus.svg" alt="" id="plusicon-2"></a>More infos</p>
+        <div class="inf" id="infosection-2">
+            <br><p>Stage en agence</p>
+            <p>2024</p>            
+            <p>Saint Marcel, France</p>
+            <p>maître de stage : Isabelle Jouhanneau</p>
+            <p></p>
+
+        </div>
+    </div>
+
+
 <div id="custom-cursor"></div>
-<script src="../conservatory/plus d'info.js"></script>
+<script src="../conservatory/moreinfo.js"></script>
+<script src="../conservatory/customcursor.js"></script>
+<script src="../../general/switchlanguage.js"></script>
+
 </body>
 </html>

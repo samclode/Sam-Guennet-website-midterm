@@ -8,13 +8,27 @@
 </head>
 <body>
     <a href="../index.html"><img src="../general/monogramme.svg" alt="" class="imglien"></a>
-    <div class="barrenav">
+    <div class="barrenav lang-en">
         <a href="../projects/hubprojects.html"><h2 > Architecture</h2></a>
         <a href="../art/hubart.html"><h2>Artworks</h2></a>
         <h2 id="bord">Research</h2>
         <a href="../about/about.html"><h3>About</h3></a>
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
     </div>
-    <div class="maincontainer">
+    <div class="barrenav lang-fr">
+        <a href="../projects/hubprojects.html"><h2 > Architecture</h2></a>
+        <a href="../art/hubart.html"><h2>Art</h2></a>
+        <h2 id="bord">Recherche</h2>
+        <a href="../about/about.html"><h3>A propos</h3></a>
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
+    </div>
+    <div class="maincontainer lang-en">
         <div class="content">
             <a href="https://drive.google.com/file/d/1sqhnCmdUhPUG7iEhysBqH-PKMr1ORjx_/view" target="_blank" rel="noopener noreferrer" id="mahaudiere"><P>La Mahaudière</P></a>
                 <img src="./hubresearchimg/Photo-05-03-2022-11-37-00.jpg" alt="bonjour" class="hoverimage">
@@ -22,7 +36,17 @@
                 <img src="./hubresearchimg/infographies.jpg" alt="" class="hoverimage">
         </div>
     </div>
+        <div class="maincontainer lang-fr">
+        <div class="content">
+            <a href="https://drive.google.com/file/d/1sqhnCmdUhPUG7iEhysBqH-PKMr1ORjx_/view" target="_blank" rel="noopener noreferrer" id="mahaudiere"><P>La Mahaudière</P></a>
+                <img src="./hubresearchimg/Photo-05-03-2022-11-37-00.jpg" alt="bonjour" class="hoverimage">
+            <a href="https://newteach.univ-tours.fr/projets/artRomain/Infographies-art-romain.pdf" target="_blank" rel="noopener noreferrer" id="roman"><P >Architecture de la Rome antique</P></a>
+                <img src="./hubresearchimg/infographies.jpg" alt="" class="hoverimage">
+        </div>
+    </div>
 
-    <script></script>
+<script src="../conservatory/customcursor.js"></script>
+<script src="../../general/switchlanguage.js"></script>
+
 </body>
 </html>

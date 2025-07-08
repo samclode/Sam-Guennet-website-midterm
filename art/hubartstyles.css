@@ -81,6 +81,22 @@ body::-webkit-scrollbar {
     top: 1vh;
     z-index: 1000;
 }
+.langswitch{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-family: 'rockwell';
+    font-size: clamp( 0.1rem, 1vw, 2rem);
+}
+.langswitch a.active {
+  font-weight: bold;
+  pointer-events: none;
+}
+.langswitch a:hover:not(.active) {
+text-decoration: underline;
+}
+
 h2{
     color: black;
     font-size: clamp( 0.1rem, 2vw, 3rem);

@@ -9,18 +9,33 @@
 <body>
     <a href="../index.html"><h1>SAM GUENNET</h1></a>
     <a href="../index.html"><img src="../general/monogramme.svg" alt="" class="imglien"></a>
-    <div class="barrenav">
+    <div class="barrenav lang-en">
         <a href="../projects/hubprojects.html"><h2> Architecture</h2></a>
         <a href="../art/hubart.html"><h2>Artworks</h2></a>
         <a href="../research/researchhub.html"><h2>Research</h2></a>
-        <h3 id="bord">About</h3>
+        <h3 id="bord">About</h3> 
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
     </div>
+    <div class="barrenav lang-fr">
+        <a href="../projects/hubprojects.html"><h2> Architecture</h2></a>
+        <a href="../art/hubart.html"><h2>Art</h2></a>
+        <a href="../research/researchhub.html"><h2>Recherche</h2></a>
+        <h3 id="bord">A propos</h3> 
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
+    </div>
+
 
 </div>
 <div class="cv">
     <a href="./imgsabout/cv.pdf" download="./imgsabout/cv.pdf"><img src="./imgsabout/cv sans bg4.png" alt=""></a>
 </div>
-<div class="presentation">
+<div class="presentation lang-en">
     <p>I first became aware of architecture as part of my art history university curriculum, which I later specialized in the study of architecture. Through my experience and analysis of historic buildings, and in particular the medieval urban fabric of Tours, architecture appeared to me as the bearer of an artistic approach and a way to asserting a think.
     </p>
     <br>
@@ -30,11 +45,32 @@
     <p>The practice of architecture enables me to experiment with social issues and to respond, through artistic practice, to concrete demands, be they political or comfort-related.
     </p>
 </div>
-<div class="links">
+
+<div class="presentation lang-fr">
+    <p>Je prends pour la première fois conscience de l’architecture, en l’étudiant dans ma formation à l’histoire de l’art, que j’ai spécialisé par la suite dans l’étude de l’architecture. Par l’expérience et l’analyse des bâtiments historiques, et notamment du tissu médiéval de Tours, l’architecture m’est alors apparue comme porteuse d’une démarche artistique et  une manière d’affirmer une pensée.
+    </p>
+    <br>
+    <p>L’idée de faire de l’architecture elle, s’est plutôt révélée au travers d’une réflexion sur l’espace et son vécu. Mes intérêts actuels portent sur la manière dont l’architecture conditionne les groupes sociaux, inclut ou exclut ; et sur comment analyser et exploiter les éléments formels qui transforment nos comportements. 
+
+    </p>
+    <br>
+    <p>La pratique de l’architecture permet d’expérimenter des questions sociales et de répondre par une pratique artistique, à des demandes concrètes, politiques, de confort.
+    </p>
+</div>
+
+<div class="links lang-en">
    
     <a href="mailto:sam.guennet@gmail.com" target="_blank" class="flexlink">sam.guennet@gmail.com</a>
     <a href="./imgsabout/Portfo.pdf" target="_blank" class="flexlink" id="portfolio">Get my portfolio</a>
     <a href="./imgsabout/cvenglish.pdf" target="_blank" class="flexlink" id="cv">Get my CV</a>
 </div>
+
+<div class="links lang-fr">
+    <a href="mailto:sam.guennet@gmail.com" target="_blank" class="flexlink">sam.guennet@gmail.com</a>
+    <a href="./imgsabout/Portfo.pdf" target="_blank" class="flexlink" id="portfolio">voir mon portfolio</a>
+    <a href="./imgsabout/cvfrancais.pdf" target="_blank" class="flexlink" id="cv">voir mon CV</a>
+</div>
+
+<script src="../general/switchlanguage.js"></script>
 </body>
 </html>

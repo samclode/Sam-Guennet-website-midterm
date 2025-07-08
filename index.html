@@ -4,34 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam Guennet</title>
-
     <link rel="stylesheet" href="./homepage/indexstyle.css">
 </head>
 <body>
     <h1>SAM GUENNET</h1>
-    <div class="barrenav">
 
+    <div class="barrenav lang-en">
         <a href="about/about.html" id="about"><h3>About</h3></a>
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
+    </div>
 
-<div class="maincontainer2">
-<div class="img1">
-    <a href="./projects/hubprojects.html"><img src="./homepage/homepageimage/coupepers2.png" alt="" class="image" id="img1"></a></a>
-        <p class="pcat">Architecture</p></div>
-<div class="img2">
-    <a href="./art/hubart.html"><img src="./homepage/homepageimage/Fresquemaindetoure.png" alt="" class="image" id="img2"></a></a>
-        <p class="pcat">Artwork</p></div>
-<div class="img3">
-    <a href="./research/researchhub.html"><img src="./homepage/homepageimage/fuye.png" alt="" class="image" id="img3"></a></a>
-        <p class="pcat">Research</p></div>
-</div>
-</div>
-<!-- Ajoute ce div dans ton body, il sera ton cercle suiveur -->
-<div id="cursor-circle"></div>
+    <div class="barrenav lang-fr">
+        <a href="about/about.html" id="about"><h3>A propos</h3></a>
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
+    </div>
 
+    <div class="maincontainer2 lang-en">
+        <div class="img1">
+            <a href="./projects/hubprojects.html"><img src="./homepage/homepageimage/coupepers2.png" alt="" class="image" id="img1"></a>
+            <p class="pcat">Architecture</p>
+        </div>
+        <div class="img2">
+            <a href="./art/hubart.html"><img src="./homepage/homepageimage/Fresquemaindetoure.png" alt="" class="image" id="img2"></a>
+            <p class="pcat">Artwork</p>
+        </div>
+        <div class="img3">
+            <a href="./research/researchhub.html"><img src="./homepage/homepageimage/fuye.png" alt="" class="image" id="img3"></a>
+            <p class="pcat">Research</p>
+        </div>
+    </div>
 
+    <div class="maincontainer2 lang-fr">
+        <div class="img1">
+            <a href="./projects/hubprojects.html"><img src="./homepage/homepageimage/coupepers2.png" alt="" class="image" id="img1"></a>
+            <p class="pcat">Architecture</p>
+        </div>
+        <div class="img2">
+            <a href="./art/hubart.html"><img src="./homepage/homepageimage/Fresquemaindetoure.png" alt="" class="image" id="img2"></a>
+            <p class="pcat">Art</p>
+        </div>
+        <div class="img3">
+            <a href="./research/researchhub.html"><img src="./homepage/homepageimage/fuye.png" alt="" class="image" id="img3"></a>
+            <p class="pcat">Recherche</p>
+        </div>
+    </div>
 
-<script src="./homepage/bouger.js" defer></script>
-<script src="./homepage/cercle.js"></script>
+    <!-- Cercle suiveur -->
+    <div id="cursor-circle"></div>
 
+    <script src="./homepage/bouger.js" defer></script>
+    <script src="./homepage/cercle.js"></script>
+    <script src="./general/switchlanguage.js"></script>
 </body>
 </html>

@@ -8,11 +8,25 @@
 </head>
 <body>
     <a href="../index.html"><img src="../general/monogramme.svg" alt="" class="imglien"></a>
-    <div class="barrenav">
+    <div class="barrenav lang-en">
         <a href="../projects/hubprojects.html"><h2> Architecture</h2></a>
         <a href="../art/hubart.html" id="bord"><h2>Artworks</h2></a>
         <a href="../research/researchhub.html"><h2>Research</h2></a>
         <a href="../about/about.html"><h3>About</h3></a>
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
+    </div>
+        <div class="barrenav lang-fr">
+        <a href="../projects/hubprojects.html"><h2> Architecture</h2></a>
+        <a href="../art/hubart.html" id="bord"><h2>Art</h2></a>
+        <a href="../research/researchhub.html"><h2>Recherche</h2></a>
+        <a href="../about/about.html"><h3>A propos</h3></a>
+        <div class="langswitch">
+            <a href="#" class="langfr" onclick="switchLanguage('fr'); return false;">Français</a>
+            <a href="#" class="langen" onclick="switchLanguage('en'); return false;">English</a>
+        </div>
     </div>
 <div class="mosaic">
     <div class="mosaic-item-wrapper" id="spanmore1">
@@ -70,5 +84,8 @@
   <div class="mosaic-item-wrapper">
 
 </div>
+<script src="../conservatory/customcursor.js"></script>
+<script src="../../general/switchlanguage.js"></script>
+
 </body>
 </html>
