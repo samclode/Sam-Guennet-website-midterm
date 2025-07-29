@@ -183,4 +183,76 @@ p:hover{
 .barrenav h3:hover::after {
   width: 100%;
 }
+.content-mobile {display: none;}
 
+@media (max-width: 768px) {
+  /* Container principal */
+    body {
+    justify-content: flex-start;
+  }
+
+  .maincontainer {
+    display: none;
+  }
+
+  /* Cacher desktop, afficher mobile */
+  .content {
+    display: none;
+  }
+  .content-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    height: 80vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;     /* Ajouté */
+    box-sizing: border-box; /* Ajouté */
+    left: 5vw;
+    top: 5vh; /* Ajusté pour centrer verticalement */
+  }
+
+  /* Chaque slide */
+  .content-mobile a {
+    scroll-snap-align: center;
+    flex: 0 0 80vh;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    margin: 0;       /* Ajouté */
+    padding: 0;      /* Ajouté */
+    width: 95vw;    /* Ajouté pour forcer la largeur complète */
+  }
+
+  /* Titre */
+  .content-mobile a p {
+    color: black;
+    font-size: clamp(1rem, 7vw, 2.5rem);
+        margin: 0 0 0px 0;
+    font-family:'typewriter';
+    color: #ea5239;
+    text-shadow:
+    -0.5px -0.5px 0 black,
+     0.5px -0.5px 0 black,
+    -0.5px  0.5px 0 black,
+     0.5px  0.5px 0 black;
+    text-align: left;
+  }
+
+  /* Image */
+  .content-mobile a img.hoverimage {
+    display: block !important;
+    width: 95vw;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    position: static;
+    transform: none;
+    
+  }
+
+}

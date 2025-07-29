@@ -1,4 +1,4 @@
-// JS pour gérer le cercle noir sur les images liens
+if (window.innerWidth > 768) { // bouger.js// JS pour gérer le cercle noir sur les images liens
 const cursorCircle = document.getElementById('cursor-circle');
 
 // Sélectionne toutes les images qui sont dans des liens (<a><img>...</a>)
@@ -18,3 +18,4 @@ window.addEventListener('mousemove', (e) => {
   cursorCircle.style.left = e.clientX + 'px';
   cursorCircle.style.top = e.clientY + 'px';
 });
+}

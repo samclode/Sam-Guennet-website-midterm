@@ -180,7 +180,7 @@ align-items: center;
 }
 .maincontainer2 img {
 
-    width: 40vw;;
+    width: 40vw;
 
 }
     #img1 {
@@ -295,3 +295,59 @@ a:hover img {
   cursor: none;
 }
 
+
+@media (max-width: 768px) {
+.maincontainer2{background-color: transparent;
+    position: fixed;
+    transform: none; /* ← Supprime le décalage qui remontait le conteneur */
+    top: 10vh;
+    left: 0;
+    width: 100vw;
+    height: 90vh;
+}
+
+
+#img1,
+#img2,
+#img3 {
+        width: 40vh !important;
+        height: auto !important;
+        top: 15vh;
+        left: 15vw;
+}
+#img3{
+    top: 27vh;
+    position: fixed;
+    right: 0;
+    left:auto;
+    width: 30vh !important;
+}
+#img2{
+    position: fixed;
+
+}
+#img1{
+    top: 35vh;
+    position: fixed;
+    left: 0;
+    right: auto;
+}
+
+.maincontainer2 img {
+    width: 50vh;
+    height: auto;
+}
+img{
+    width: 50vh;
+    height: auto;
+}
+
+.pcat{
+    display: none;
+}
+    .img1:hover .pcat,
+    .img2:hover .pcat,
+    .img3:hover .pcat {
+        display: none;
+    }
+}

@@ -1,5 +1,4 @@
 // --- custom-cursor.js ---
-
 const customCursor     = document.getElementById('custom-cursor');
 const previousProjects = document.querySelectorAll('.previousproject');
 const nextProjects     = document.querySelectorAll('.nextproject');
@@ -12,6 +11,13 @@ const leftCursorImage  = "../../general/flechegauche.svg";
 const rightCursorImage = "../../general/flechedroite.svg";
 
 document.addEventListener('mousemove', e => {
+  // Désactiver complètement sur mobile
+  if (window.innerWidth <= 768) {
+    customCursor.style.display = 'none';
+    document.body.style.cursor  = 'default';
+    return;
+  }
+
   const x      = e.clientX;
   const y      = e.clientY;
   const w      = window.innerWidth;
@@ -59,6 +65,9 @@ document.addEventListener('mousemove', e => {
 });
 
 document.addEventListener('click', e => {
+  // Désactiver complètement sur mobile
+  if (window.innerWidth <= 768) return;
+
   const x      = e.clientX;
   const y      = e.clientY;
   const w      = window.innerWidth;

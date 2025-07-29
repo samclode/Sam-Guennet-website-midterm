@@ -209,21 +209,25 @@ a:hover {
     .presentation{
         top : 70px;
         left: 1vw;
-        height: 90vh;
+        height: 60vh;
+        max-width: none !important;
+        width: 98vw !important;
     }
     .links{
-  top: 50px;
+    position: absolute;
+    top: 73vh;
   flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    height: 50px;
-    width: 250px;
+    height: auto;
+    width: 98vw;
     margin: 0;
     left: 1vw;
     }
     .flexlink{
-        font-size: 7.5px
+        font-size: 0.7rem;
+        height: auto;
     }
 }
 
@@ -260,4 +264,5 @@ a:hover {
 .barrenav h3:hover::after {
   width: 100%;
 }
+#name {display: none;}
 

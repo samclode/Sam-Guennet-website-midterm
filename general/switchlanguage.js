@@ -13,8 +13,8 @@
 
     // 3. Afficher uniquement LES ÉLÉMENTS de la langue choisie
     document.querySelectorAll('.lang-' + lang).forEach(el => {
-      // on remet l'affichage par défaut :
-      el.style.display = '';
+      // Forcer display:block pour les indicateurs
+      el.style.display = el.classList.contains('pull-next-indicator') ? 'block' : '';
     });
 
     // 4. Mettre à jour les boutons

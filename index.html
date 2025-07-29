@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam Guennet</title>
     <link rel="stylesheet" href="./homepage/indexstyle.css">
+    <link rel="stylesheet" href="./homepage/Popup.css">
+    <link rel="stylesheet" href="./general/barrenavmobile.css">
 </head>
 <body>
     <h1>SAM GUENNET</h1>
@@ -55,11 +57,21 @@
         </div>
     </div>
 
-    <!-- Cercle suiveur -->
+<div class="popup lang-en" id="popup-en">
+  <span>This website is coded from scratch by Sam Guennet. It's my first experiment with HTML, CSS and JavaScript. Don't hesitate to give me feedback to improve it :)</span>
+  <a class="close-btn" id="closeBtn-en">[x]</a>
+</div>
+
+<div class="popup lang-fr" id="popup-fr">
+  <span>Ce site web est codé de zéro par Sam Guennet. C'est ma première expérimentation autour du code en HTML CSS et JavaScript. N'hésitez pas à me faire des retours pour son amélioration :)</span>
+  <a class="close-btn" id="closeBtn-fr">[x]</a>
+</div>
+
     <div id="cursor-circle"></div>
 
     <script src="./homepage/bouger.js" defer></script>
     <script src="./homepage/cercle.js"></script>
     <script src="./general/switchlanguage.js"></script>
+    <script src="./homepage/popup.js"></script>
 </body>
 </html>

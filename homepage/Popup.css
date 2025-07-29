@@ -1,0 +1,47 @@
+ @font-face {
+    font-family: 'rockwell';
+    src: url('../general/fonts/ROCK.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'typewriter';
+    src: url('../general/fonts/dehinted-AmericanTypewriter.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+.popup {
+  position: fixed;
+  bottom: 0; /* positionné tout en bas */
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  color: white;
+  padding: 0px 0px 20px 0px; /* Ajoute 20px en bas */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'typewriter';
+  transition: opacity 0s ease, transform 0s ease;
+}
+
+
+    .popup.hide {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-weight: bold;
+      color: #ffffff;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+
+    .close-btn:hover {
+      color: #ffffff;
+    }

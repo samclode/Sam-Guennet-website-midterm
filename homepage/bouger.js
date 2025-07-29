@@ -1,4 +1,4 @@
-// bouger.js
+if (window.innerWidth > 768) { // bouger.js
 (function() {
   const CLICK_THRESHOLD = 5; // px
 
@@ -148,3 +148,4 @@ document.addEventListener('mouseleave', () => {
     img.style.transform = 'translate(0px, 0px)';
   });
 });
+}

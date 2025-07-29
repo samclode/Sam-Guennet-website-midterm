@@ -125,7 +125,8 @@ body{
   background-color: #ea5239;
   overflow: auto;                  /* active le scroll */
   -ms-overflow-style: none;       /* IE et Edge */
-  scrollbar-width: none;          
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain; 
 }
   .maincontainer :-webkit-scrollbar {
     display: none; 
@@ -302,3 +303,6 @@ img[id^="plusicon-"] {
   text-decoration: underline;
 }
 
+.pull-next-indicator {
+display: none !important;
+}

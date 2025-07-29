@@ -223,20 +223,7 @@ a:hover {
     display: grid;
 }
 
-@media (max-width: 768px) {
-    .preview {
-      display: none !important;
-    }
-    .mosaic {
-        width: 90vw;
-        left: 5vh;
-        right: 5vh;
-        margin: 0;
-        padding: 0 ; /* un petit padding si tu veux aérer un peu */
-        grid-template-columns: repeat(2, 1fr); /* par exemple 2 colonnes sur mobile */
-        grid-auto-flow: dense;
-    }
-}
+
 #bord,
 .barrenav h2,
 .barrenav h3 {
@@ -271,3 +258,87 @@ a:hover {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+    .preview {
+      display: none !important;
+    }
+    .mosaic {
+        width: 100vw;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0 ; /* un petit padding si tu veux aérer un peu */
+        grid-template-columns: repeat(2, 1fr); /* par exemple 2 colonnes sur mobile */
+        grid-auto-flow: dense;
+    }
+    .barrenav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: end;
+    gap: 15px;
+    position: fixed;
+    right: 1vw;
+    top: 1.5vh;
+    height: 20px;
+    z-index: 1000;
+    }
+    .imglien{
+    position: fixed;
+    top: 2vh;
+    left: 3vw;
+    height: 7vh;
+    z-index: 500;
+}
+
+    #bord{
+    border: 1.75px solid black;
+    padding: 1px 1px 1px 1px;
+    margin: 0 0 0 0;
+    color: rgb(0, 0, 0);
+    z-index: 1000;
+    }
+    h2{
+        margin: 0;
+        line-height: 1;
+        font-size: clamp( 0.1rem, 3vw, 3rem);
+    }
+    h3{
+        margin: 0;
+        line-height: 1;
+        font-size: clamp( 0.1rem, 3vw, 3rem);
+    }
+    #bord h2 {
+        display: inline;
+        margin: 0;
+        line-height: 1;
+        vertical-align: middle;
+    }
+    .langswitch{
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 0.20rem;
+        font-family: 'rockwell';
+        font-size: clamp( 0.1rem, 2vw, 2rem);
+    }
+    .langswitch a {
+    margin: 0;
+    font-weight: 400;
+    padding: 0;
+    line-height: 1;      /* hauteur de ligne égale à la taille de police */
+    }
+    .langswitch a.active {
+    font-weight: bold;
+    pointer-events: none;
+    line-height: 0.5;
+    padding-top: 2px;    
+    }
+      *:hover {
+    /* on réinitialise tout ce qui pourrait avoir été défini */
+    background: none !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    transform: none !important;
+  }
+}
