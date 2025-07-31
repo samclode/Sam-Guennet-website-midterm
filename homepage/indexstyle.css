@@ -24,6 +24,35 @@
     font-weight: normal;
     font-display: swap;
 }
+/* 1) Calque orange fixe derrière tout le contenu */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #ea5239;
+  z-index: -1;
+}
+
+/* 2) Plus de tap-highlight / callout blanc */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* 3) Conserver l’orange même en :active */
+.image, .maintext {
+  background-color: #ea5239 !important;
+}
+.image:active,
+.maintext:active {
+  background-color: #ea5239 !important;
+}
+
+/* 4) Gérer la safe-area pour éviter tout fond blanc sous le dock */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 body{
     background-color: #ea5239;
    height: 80vh;
@@ -187,18 +216,21 @@ align-items: center;
         position: fixed;
         top: 0px;
         left: 15vw;
+        background-color: transparent !important;
     }
     #img2 {
         position: fixed;
         top: -15vh;
         left: 30vw;
         width: 35vw;
+        background-color: transparent !important;
     }
     #img3 {
         position: fixed;
         top: -15vh;
         left: 40vw;
         width: 35vw;
+        background-color: transparent !important;
     }
 
     .pcat{

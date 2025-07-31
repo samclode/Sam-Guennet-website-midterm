@@ -68,6 +68,22 @@ body{
     top: 1vh;
     z-index: 1000;
 }
+.langswitch{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-family: 'rockwell';
+    font-size: clamp( 0.1rem, 1vw, 2rem);
+}
+.langswitch a.active {
+  font-weight: bold;
+  pointer-events: none;
+}
+.langswitch a:hover:not(.active) {
+text-decoration: underline;
+}
+
 h2{
     color: black;
     font-size: clamp( 0.1rem, 2vw, 3rem);
@@ -277,3 +293,66 @@ body{
   width: 100%;
 }
 
+.inf {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.inf.visible {
+  max-height: 300px; /* ou la hauteur nécessaire */
+}
+
+img[id^="plusicon-"] {
+  transition: transform 0.3s ease;
+}
+#plus-2 img{
+    width: 1.2vw;
+    height: 1.2vh;
+    transition: transform 0.2s ease; /* animation fluide */
+}
+#plus-1 img{
+    width: 1.2vw;
+    height: 1.2vh;
+    transition: transform 0.2s ease; /* animation fluide */
+}
+#plus-1:hover,
+#plus-2:hover {
+  text-decoration: underline;
+}
+
+.pull-next-indicator {
+display: none !important;
+}
+.plusinfos{
+    background-color: transparent;
+    position: relative;
+    margin: 15px;
+    top: -25.5vh;
+    width: 10vw;
+}
+#plus{
+    font-family: 'rockwell';
+    font-size: 14px;
+    color: black;
+}
+#plus:hover{
+    text-decoration: underline;
+}
+.inf{
+    position: absolute;
+    font-family: 'typewriter';
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    margin-left: 22px;
+
+}
+#infosection {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, opacity 0.2s ease;
+}
+
+#infosection.visible {
+    max-height: 300px; /* assez grand pour contenir le contenu */
+
+}

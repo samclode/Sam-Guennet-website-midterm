@@ -1,3 +1,42 @@
+html {
+  background-color: #ea5239;
+  background-attachment: fixed;
+}
+body {
+  background-color: #ea5239 !important;
+  
+}
+
+* {
+  -webkit-tap-highlight-color: #ea5239 !important;
+}html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #ea5239;
+  z-index: -1;
+}
+
+/* 2) Plus de tap-highlight / callout blanc */
+* {
+  -webkit-tap-highlight-color: #ea5239 !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* 3) Conserver l’orange même en :active */
+.image, .maintext {
+  background-color: #ea5239 !important;
+}
+.image:active,
+.maintext:active {
+  background-color: #ea5239 !important;
+}
+
+/* 4) Gérer la safe-area pour éviter tout fond blanc sous le dock */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 @font-face {
     font-family: 'typewriter';
     src: url('../../general/fonts/dehinted-AmericanTypewriter.woff2');
@@ -26,6 +65,8 @@
     font-display: swap;
 }
 @media (max-width: 768px) {
+
+  
 
   body {
     margin: 0;
@@ -63,13 +104,15 @@ html {
     text-align: justify;
 }
 .maincontainer {
+  -webkit-tap-highlight-color: #ea5239 !important;
   background-color: #ea5239 ;
     margin: 0 !important;
     padding: 0 !important;
     position: absolute;
-    top: -5vh;
+    top: 0px;
     left: 0;
     right: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
     overscroll-behavior: auto;
@@ -84,6 +127,7 @@ html {
   flex-shrink: 0;
     scroll-snap-align: start;
   flex-shrink: 0;
+  background-color: #ea5239;
 }
 .image img {
     height: auto;
@@ -98,16 +142,18 @@ html {
     background-color: #ea5239;
     position: relative;
     top: 90vh;
-    width: 96vw;
-    left: 2vw;
-    right: 2vw;
+    width: 100vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     height: auto;
     position: absolute;
     margin: 0;
-    padding: 0;
     max-width: none;
 }
 .nextproject {
+display: none;
+}
+.previousproject {
 display: none;
 }
 .plusinfos {
@@ -166,5 +212,22 @@ display: none;
 .pull-next-indicator.visible {
   transform: translateY(0) !important;
 }
+.image,
+.maintext {
+  /* forcer l’orange en permanence */
+  background-color: #ea5239 !important;
+  -webkit-tap-highlight-color: #ea5239; /* plus de flash gris/blanc au tap */
+  -webkit-touch-callout: none;               /* désactive la sélection/“callout” */
+  touch-action: pan-y;                       /* assure le scroll vertical */
+}
 
+/* ET SURTOUT : quand la boîte est “active” (= touchée), on garde l’orange */
+.image:active,
+.maintext:active {
+  background-color: #ea5239 !important;
+}
+* {
+  -webkit-tap-highlight-color: #ea5239 !important;
+  -webkit-touch-callout: none !important;
+}
 }

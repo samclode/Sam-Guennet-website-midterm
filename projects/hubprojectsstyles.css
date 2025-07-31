@@ -25,6 +25,35 @@
     font-weight: normal;
     font-display: swap;
 }
+/* 1) Calque orange fixe derrière tout le contenu */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #ea5239;
+  z-index: -1;
+}
+
+/* 2) Plus de tap-highlight / callout blanc */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* 3) Conserver l’orange même en :active */
+.image, .maintext {
+  background-color: #ea5239 !important;
+}
+.image:active,
+.maintext:active {
+  background-color: #ea5239 !important;
+}
+
+/* 4) Gérer la safe-area pour éviter tout fond blanc sous le dock */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 body{
     background-color: #ea5239;
    height: 100vh;
@@ -224,6 +253,7 @@ p:hover{
     box-sizing: border-box; /* Ajouté */
     left: 5vw;
     top: 5vh; /* Ajusté pour centrer verticalement */
+    background-color: #ea5239;
   }
 
   /* Chaque slide */
@@ -239,6 +269,7 @@ p:hover{
     margin: 0;       /* Ajouté */
     padding: 0;      /* Ajouté */
     width: 95vw;    /* Ajouté pour forcer la largeur complète */
+    background-color: #ea5239;
   }
 
   /* Titre */
@@ -266,7 +297,7 @@ p:hover{
     padding: 0;
     position: static;
     transform: none;
-    
+    background-color: #ea5239;
   }
 
 }
