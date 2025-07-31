@@ -1,3 +1,4 @@
+if (window.innerWidth < 768) { // bouger.js
 (function() {
   const container = document.querySelector('.maincontainer');
   if (!container) return;
@@ -34,3 +35,4 @@
     container.style.overflowY = 'auto';
   });
 })();
+}

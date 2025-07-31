@@ -1,3 +1,4 @@
+if (window.innerWidth < 768) { // bouger.js
 (function() {
   const threshold  = 200;  // px à tirer
   const minHoldTime = 300; // ms à maintenir le tirage
@@ -57,3 +58,4 @@
     }
   });
 })();
+}
