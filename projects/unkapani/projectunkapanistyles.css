@@ -165,8 +165,8 @@ body{
     
 }
 .titlearticle{
-    font-family: 'franklin gothic heavy';
-    font-size: x-large;
+    font-family: 'franklin gothic heavy' !important;
+    font-size: x-large !important;
     margin-top: 0;
     margin-bottom: 0;
     gap: 0;

@@ -64,9 +64,17 @@ body {
     font-weight: normal;
     font-display: swap;
 }
+
+
 @media (max-width: 768px) {
 
-  
+  .titlearticle{
+    font-family: 'franklin gothic heavy' !important;
+    font-size: x-large !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 0;
+}
 
   body {
     margin: 0;
