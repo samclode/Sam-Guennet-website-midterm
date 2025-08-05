@@ -87,12 +87,13 @@ body::-webkit-scrollbar {
     display: none; /* Chrome, Safari et Opera */
   }
 .imglien{
+    display: block ;
     position: fixed;
     top: 2vh;
     left: 3vw;
     height: 10vh;
     z-index: 500;
-    display: none;
+
 }
 
 #bord{
@@ -211,7 +212,7 @@ a:hover {
     font-family: 'rockwell';
     background-color: transparent;
     left  : 2vw;
-    top: 100px;
+    top: 130px;
     position: absolute;
 
     position: fixed;
