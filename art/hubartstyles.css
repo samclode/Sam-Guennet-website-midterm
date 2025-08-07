@@ -363,11 +363,5 @@ a:hover {
     line-height: 0.5;
     padding-top: 2px;    
     }
-      *:hover {
-    /* on réinitialise tout ce qui pourrait avoir été défini */
-    background: none !important;
-    color: inherit !important;
-    text-decoration: none !important;
-    transform: none !important;
-  }
+
 }
