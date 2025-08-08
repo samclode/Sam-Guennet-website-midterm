@@ -287,6 +287,12 @@ a:hover {
   width: 100%;
 }
 
+.mosaic-item-wrapper {
+  cursor: pointer;
+  /* facultatif, pour améliorer la réactivité tactile : */
+  touch-action: manipulation;
+}
+
 @media (max-width: 768px) {
     .preview {
       display: none !important;
