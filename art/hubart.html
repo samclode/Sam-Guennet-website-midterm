@@ -89,30 +89,32 @@
 <script src="../conservatory/customcursor.js"></script>
 <script src="../general/switchlanguage.js"></script>
 <script>
-  // Récupère tous les wrappers
-  const wrappers = document.querySelectorAll('.mosaic-item-wrapper');
+  // On n'active le click-to-preview que sur les dispositifs tactiles
+  if (window.matchMedia("(hover: none)").matches || 'ontouchstart' in window) {
+    const wrappers = document.querySelectorAll('.mosaic-item-wrapper');
 
-  wrappers.forEach(wrapper => {
-    const preview = wrapper.querySelector('.preview');
+    wrappers.forEach(wrapper => {
+      const preview = wrapper.querySelector('.preview');
 
-    // Au clic / tap
-    wrapper.addEventListener('click', e => {
-      e.stopPropagation(); // Empêche le clic de remonter
+      wrapper.addEventListener('click', e => {
+        e.stopPropagation();
 
-      // 1) On ferme toutes les autres previews
-      document.querySelectorAll('.preview').forEach(p => {
-        if (p !== preview) p.style.display = 'none';
+        // Fermer les autres previews
+        document.querySelectorAll('.preview').forEach(p => {
+          if (p !== preview) p.style.display = 'none';
+        });
+
+        // Afficher ou masquer la preview de ce wrapper
+        preview.style.display = (preview.style.display === 'block') ? 'none' : 'block';
       });
-
-      // 2) On togglle l'affichage de *celle-ci*
-      preview.style.display = (preview.style.display === 'block') ? 'none' : 'block';
     });
-  });
 
-  // Clic en dehors → fermer toutes les previews
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.preview').forEach(p => p.style.display = 'none');
-  });
+    // Clic extérieur → fermer toutes les previews
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.preview').forEach(p => p.style.display = 'none');
+    });
+  }
 </script>
+
 </div></body>
 </html>
