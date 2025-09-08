@@ -179,6 +179,10 @@ p:hover{
 #roman:hover + .hoverimage {
     display: block;
 }
+#stay:hover + .hoverimage {
+    display: block;
+}
+
 #bord,
 .barrenav h2,
 .barrenav h3 {
