@@ -187,6 +187,9 @@ p:hover{
 #oldbarn:hover + .hoverimage {
     display: block;
 }
+#beton:hover + .hoverimage {
+    display: block;
+}
 
 #bord,
 .barrenav h2,
