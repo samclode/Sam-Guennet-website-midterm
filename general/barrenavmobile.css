@@ -79,3 +79,7 @@
   transition: width 0.00s ease;
 }
 }
+::selection {
+  background: #000000;
+  color: #ea5239;
+}

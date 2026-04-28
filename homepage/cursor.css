@@ -13,3 +13,8 @@ a {
 a:active {
   cursor: url('../general/vertopal.com_3f1f6467240b48609dac754caf413776-4.cur') 8 8, grabbing;
 }
+
+::selection {
+  background: #000000;
+  color: #ea5239;
+}

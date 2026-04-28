@@ -356,3 +356,8 @@ display: none !important;
     max-height: 300px; /* assez grand pour contenir le contenu */
 
 }
+
+::selection {
+  background: #000000;
+  color: #ea5239;
+}

@@ -45,3 +45,7 @@
     .close-btn:hover {
       color: #ffffff;
     }
+::selection {
+  background: #000000;
+  color: #ea5239;
+}

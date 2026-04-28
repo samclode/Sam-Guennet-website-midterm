@@ -239,3 +239,7 @@ display: none;
   -webkit-touch-callout: none !important;
 }
 }
+::selection {
+  background: #000000;
+  color: #ea5239;
+}
