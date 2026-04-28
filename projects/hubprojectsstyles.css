@@ -187,7 +187,7 @@ p:hover{
 #oldbarn:hover + .hoverimage {
     display: block;
 }
-.beton:hover + .hoverimage {
+#beton:hover + .hoverimage {
     display: block;
 }
 
