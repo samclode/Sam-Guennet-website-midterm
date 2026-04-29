@@ -172,6 +172,9 @@ p:hover{
     display: none;
     z-index: 100;
 }
+.beton:hover + .hoverimage {
+    display: block;
+}
 #unkapani:hover + .hoverimage {
     display: block;
 }
@@ -187,9 +190,7 @@ p:hover{
 #oldbarn:hover + .hoverimage {
     display: block;
 }
-#beton:hover + .hoverimage {
-    display: block;
-}
+
 
 #bord,
 .barrenav h2,
