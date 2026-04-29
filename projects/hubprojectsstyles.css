@@ -172,7 +172,7 @@ p:hover{
     display: none;
     z-index: 100;
 }
-#beton:hover + .hoverimage {
+.beton:hover + .hoverimage {
     display: block !important;
 }
 #unkapani:hover + .hoverimage {
