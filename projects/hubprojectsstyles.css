@@ -173,22 +173,28 @@ p:hover{
     z-index: 100;
 }
 .beton:hover + .hoverimage {
-    display: block !important;
+    display: block;
+    z-index: 0;
 }
 #unkapani:hover + .hoverimage {
     display: block;
+    z-index: 0;
 }
 #ordinaryheritage:hover + .hoverimage {
     display: block;
+    z-index: 0;
 }
 #conservatory:hover + .hoverimage {
     display: block;
+    z-index: 0;
 }
 #petiteceinture:hover + .hoverimage {
     display: block;
+    z-index: 0;
 }
 #oldbarn:hover + .hoverimage {
     display: block;
+    z-index: 0;
 }
 
 
