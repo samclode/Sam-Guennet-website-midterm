@@ -1,0 +1,15 @@
+[
+  {
+    "id": "zone-01",
+    "label": "Zone 01",
+    "resume": "Description courte visible au survol.",
+    "x": 0.05,
+    "y": 0.10,
+    "width": 0.20,
+    "height": 0.25,
+    "article": {
+      "titre": "Titre de l'article",
+      "contenu": "<p>Contenu de l'article à remplir.</p>"
+    }
+  }
+]
