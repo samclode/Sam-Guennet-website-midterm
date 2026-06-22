@@ -1,15 +1,39 @@
 [
   {
     "id": "zone-01",
-    "label": "Zone 01",
-    "resume": "Description courte visible au survol.",
-    "x": 0.05,
-    "y": 0.10,
-    "width": 0.20,
-    "height": 0.25,
-    "article": {
-      "titre": "Titre de l'article",
-      "contenu": "<p>Contenu de l'article à remplir.</p>"
-    }
+    "label": "Hypermodernité",
+    "resume": "Arpentage de ZAC Ivry confluence...",
+    "x": 0.02, "y": 0.02, "width": 0.18, "height": 0.18,
+
+  "article": {
+    "titre": "Hypermodernité",
+    "sous_titre": "La ville poussière",
+    "fichier": "./articles/zone-01.html"
   }
+},
+
+{
+  "id": "zone-02",
+  "label": "Retisser les liens",
+  "resume": "Tisser des liens entre histoires de lieux, d'économie et de travailleurs séparées par la logique néolibérale.",
+  "x": 0.22, "y": 0.02, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Retisser les liens",
+    "sous_titre": "Apercevoir l'au-delà",
+    "fichier": "./articles/zone-02.html"
+  }
+},
+
+{
+  "id": "zone-03",
+  "label": "Tomber dans la poudre",
+  "resume": "45 rue Bruneseau, Paris 13 — visite du centre de distribution de ciment.",
+  "x": 0.42, "y": 0.02, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Tomber dans la poudre",
+    "sous_titre": "Centre de distribution",
+    "fichier": "./articles/zone-03.html"
+  }
+}
+
 ]

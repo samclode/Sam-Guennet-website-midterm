@@ -1,30 +1,36 @@
 /* ── 1. Source des tuiles ── */
-const TILE_SOURCE = "https://samguennet.fr/carto-tiles/carto.dzi";
+const TILE_SOURCE = "./carto-tiles/carto.dzi";
 
 /* ── 2. Init OpenSeadragon ── */
 const viewer = OpenSeadragon({
   id:                    "viewer",
   tileSources:           TILE_SOURCE,
-  prefixUrl:             "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
-  defaultZoomLevel:      1,
-  minZoomLevel:          0.5,
+  prefixUrl:             "https://cdn.jsdelivr.net/npm/openseadragon@5.0/build/openseadragon/images/",
+
+  defaultZoomLevel:      0,
+  minZoomLevel:          0,
   maxZoomLevel:          20,
-  visibilityRatio:       0.8,
+  visibilityRatio:       1,
   constrainDuringPan:    true,
+
   immediateRender:       false,
   placeholderFillStyle:  "#111110",
   showNavigationControl: false,
   showNavigator:         false,
+
   gestureSettingsMouse: {
-    scrollToZoom:   true,
+    scrollToZoom:   false,
     clickToZoom:    false,
-    dblClickToZoom: true,
+    dblClickToZoom: false,
+    dragToPan:      false,
   },
   gestureSettingsTouch: {
-    pinchToZoom: true,
+    pinchToZoom: false,
     clickToZoom: false,
+    dragToPan:   false,
   },
-  animationTime: 0.5,
+
+  animationTime: 0.8,
   blendTime:     0.2,
 });
 
@@ -132,15 +138,18 @@ function ouvrirZone(zone) {
   if (zoneEl) zoneEl.classList.add("active");
   zoneActive = zone.id;
 
-  zoomVersZone(zone);
-
-  panneauContenu.innerHTML = `
-    <h2>${zone.label}</h2>
-    <h3>${zone.article.titre}</h3>
-    ${zone.article.contenu}
-  `;
-
   panneau.classList.add("ouvert");
+
+fetch(zone.article.fichier)
+    .then(r => r.text())
+    .then(html => {
+      panneauContenu.innerHTML = `
+        <p class="art-titre">${zone.article.titre}</p>
+        <p class="art-sous-titre">${zone.article.sous_titre}</p>
+        ${html}
+      `;
+    });
+  setTimeout(() => zoomVersZone(zone), 350);
 }
 
 function zoomVersZone(zone) {
@@ -148,37 +157,57 @@ function zoomVersZone(zone) {
   if (!item) return;
   const imgW = item.source.width;
   const imgH = item.source.height;
+  const ratio = imgH / imgW;
 
-  const vpRect = new OpenSeadragon.Rect(
-    zone.x,
-    zone.y * (imgH / imgW),
-    zone.width,
-    zone.height * (imgH / imgW)
+  // Le panneau prend 50% de l'écran
+  // La zone visible pour la carte = 50% de l'écran à gauche
+  const fractionVisible = 0.5;
+
+  // Zoom pour que la zone tienne dans les 50% visibles
+  // En coordonnées viewport OSD, l'image entière fait une largeur de 1
+    const zoomPourLargeur = fractionVisible / zone.width;
+    const zoomPourHauteur = (window.innerHeight / window.innerWidth) / (zone.height * ratio);
+    const zoomCible       = Math.min(zoomPourLargeur, zoomPourHauteur);
+
+  // Centre de la zone en coordonnées viewport
+  const centreZoneX = zone.x + zone.width  / 2;
+  const centreZoneY = (zone.y + zone.height / 2) * ratio;
+
+  // OSD centre sur le point donné au milieu de l'écran ENTIER
+  // On veut que la zone soit centrée dans la moitié gauche
+  // Donc on décale le point de centrage vers la droite de 25% de la largeur viewport
+  // (car le centre de la moitié gauche est à 25% de la largeur totale)
+  // En coordonnées viewport : 0.25 / zoomCible
+  const decalage = 0.25 / zoomCible;
+  const centreAjuste = new OpenSeadragon.Point(
+    centreZoneX + decalage,
+    centreZoneY
   );
 
-  const centre      = vpRect.getCenter();
-  const panneauPx   = 380;
-  const decalage    = (panneauPx / 2) / window.innerWidth;
-  const centreAjuste = new OpenSeadragon.Point(centre.x - decalage, centre.y);
-  const zoomCible   = Math.min(
-    (0.6) / zone.width,
-    (0.6) / (zone.height * (imgH / imgW))
-  );
-
-  viewer.viewport.zoomTo(Math.max(zoomCible, 2), null, false);
+  viewer.viewport.zoomTo(zoomCible, null, false);
   viewer.viewport.panTo(centreAjuste, false);
 }
 
-function fermerPanneau() {
+function retourAccueil() {
+  viewer.viewport.goHome(false);
   panneau.classList.remove("ouvert");
   document.querySelectorAll(".zone").forEach(el => el.classList.remove("active"));
   zoneActive = null;
 }
 
-btnFermer.addEventListener("click", fermerPanneau);
+btnFermer.addEventListener("click", retourAccueil);
+document.getElementById("zone-prev").addEventListener("click", () => naviguerZone(-1));
+document.getElementById("zone-next").addEventListener("click", () => naviguerZone(1));
+
+function naviguerZone(direction) {
+  if (!zones.length) return;
+  const indexActuel = zones.findIndex(z => z.id === zoneActive);
+  const indexSuivant = (indexActuel + direction + zones.length) % zones.length;
+  ouvrirZone(zones[indexSuivant]);
+}
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") fermerPanneau();
+  if (e.key === "Escape") retourAccueil();
 });
 
 /* ── 7. Resize ── */

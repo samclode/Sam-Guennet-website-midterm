@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expérience béton</title>
   <link rel="stylesheet" href="styleexperiencebeton.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body>
   <div id="viewer"></div>
@@ -15,8 +15,26 @@
     <p id="tooltip-resume"></p>
   </div>
   <aside id="panneau" class="panneau">
-    <button id="panneau-fermer">✕</button>
-    <div id="panneau-contenu"></div>
+    <div id="panneau-nav">
+    <button id="panneau-fermer">
+        <svg width="35" height="35" viewBox="0 0 20 20" fill="none">
+        <path d="M3 3L17 17M17 3L3 17" stroke="currentColor" stroke-width="3.5" stroke-linecap="square"/>
+        </svg>
+    </button>
+    <div id="panneau-fleches">
+        <button id="zone-prev">
+        <svg width="35" height="35" viewBox="0 0 20 20" fill="none">
+            <path d="M12 4L5 10L12 16" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+        </button>
+        <button id="zone-next">
+        <svg width="35" height="35" viewBox="0 0 20 20" fill="none">
+            <path d="M8 4L15 10L8 16" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+        </button>
+    </div>
+    </div>
+<div id="panneau-contenu"></div>
   </aside>
   <script src="mainexperiencebeton.js"></script>
 </body>
