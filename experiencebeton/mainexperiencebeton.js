@@ -8,29 +8,28 @@ const viewer = OpenSeadragon({
   prefixUrl:             "https://cdn.jsdelivr.net/npm/openseadragon@5.0/build/openseadragon/images/",
 
   defaultZoomLevel:      0,
-  minZoomLevel:          0,
-  maxZoomLevel:          20,
+  minZoomLevel:          0.7,
+  maxZoomLevel:          9,
   visibilityRatio:       1,
   constrainDuringPan:    true,
-
   immediateRender:       false,
   placeholderFillStyle:  "#111110",
   showNavigationControl: false,
   showNavigator:         false,
 
   gestureSettingsMouse: {
-    scrollToZoom:   false,
+    scrollToZoom:   true,
     clickToZoom:    false,
-    dblClickToZoom: false,
-    dragToPan:      false,
+    dblClickToZoom: true,
+    dragToPan:      true,
   },
   gestureSettingsTouch: {
-    pinchToZoom: false,
+    pinchToZoom: true,
     clickToZoom: false,
-    dragToPan:   false,
+    dragToPan:   true,
   },
 
-  animationTime: 0.8,
+  animationTime: 0.6,
   blendTime:     0.2,
 });
 
@@ -41,6 +40,7 @@ fetch("./zone.json")
   .then(r => r.json())
   .then(data => {
     zones = data;
+    construireSommaire();
     if (viewer.world.getItemCount() > 0) {
       construireOverlay();
     } else {
@@ -63,11 +63,24 @@ function construireOverlay() {
     rect.setAttribute("class", "zone");
     rect.dataset.id = zone.id;
     positionnerZone(rect, zone);
+    if (zone.categorie) {
+  rect.classList.add(`zone-cat-${zone.categorie}`);
+    }
 
-    rect.addEventListener("mouseenter", (e) => afficherTooltip(e, zone));
-    rect.addEventListener("mousemove",  (e) => deplacerTooltip(e));
-    rect.addEventListener("mouseleave", () => cacherTooltip());
-    rect.addEventListener("click",      () => ouvrirZone(zone));
+    rect.addEventListener("mouseenter", (e) => {
+      if (zoneActive) return;
+      afficherTooltip(e, zone);
+      afficherCoins(zone.id);
+    });
+    rect.addEventListener("mousemove",  (e) => {
+      if (zoneActive) return;
+      deplacerTooltip(e);
+    });
+    rect.addEventListener("mouseleave", () => {
+      cacherTooltip();
+      if (zoneActive !== zone.id) cacherCoins(zone.id);
+    });
+    rect.addEventListener("click", () => ouvrirZone(zone));
 
     svgOverlay.appendChild(rect);
   });
@@ -104,7 +117,46 @@ function recalculerOverlay() {
   });
 }
 
-/* ── 5. Tooltip ── */
+/* ── 5. Coins SVG ── */
+function afficherCoins(id) {
+  cacherCoins(id);
+  const rectEl = svgOverlay.querySelector(`[data-id="${id}"]`);
+  if (!rectEl) return;
+
+  const x      = parseFloat(rectEl.getAttribute("x"));
+  const y      = parseFloat(rectEl.getAttribute("y"));
+  const w      = parseFloat(rectEl.getAttribute("width"));
+  const h      = parseFloat(rectEl.getAttribute("height"));
+  const taille = Math.min(w, h) * 0.3;
+
+  const coinHG = document.createElementNS("http://www.w3.org/2000/svg", "image");
+  coinHG.setAttribute("class", `coin-zone coin-${id}`);
+  coinHG.setAttribute("href", "./coinzone.svg");
+  coinHG.setAttribute("x", x);
+  coinHG.setAttribute("y", y);
+  coinHG.setAttribute("width",  taille);
+  coinHG.setAttribute("height", taille);
+  coinHG.style.pointerEvents = "none";
+
+  const coinBD = document.createElementNS("http://www.w3.org/2000/svg", "image");
+  coinBD.setAttribute("class", `coin-zone coin-${id}`);
+  coinBD.setAttribute("href", "./coinzone.svg");
+  coinBD.setAttribute("x", x + w - taille);
+  coinBD.setAttribute("y", y + h - taille);
+  coinBD.setAttribute("width",  taille);
+  coinBD.setAttribute("height", taille);
+  coinBD.setAttribute("transform", `rotate(180, ${x + w - taille/2}, ${y + h - taille/2})`);
+  coinBD.style.pointerEvents = "none";
+
+  svgOverlay.appendChild(coinHG);
+  svgOverlay.appendChild(coinBD);
+}
+
+function cacherCoins(id) {
+  svgOverlay.querySelectorAll(`.coin-${id}`).forEach(el => el.remove());
+}
+
+/* ── 6. Tooltip ── */
 function afficherTooltip(e, zone) {
   tooltipLabel.textContent  = zone.label;
   tooltipResume.textContent = zone.resume;
@@ -126,7 +178,7 @@ function cacherTooltip() {
   tooltip.classList.remove("visible");
 }
 
-/* ── 6. Ouverture zone ── */
+/* ── 7. Ouverture zone ── */
 const panneau        = document.getElementById("panneau");
 const panneauContenu = document.getElementById("panneau-contenu");
 const btnFermer      = document.getElementById("panneau-fermer");
@@ -136,11 +188,12 @@ function ouvrirZone(zone) {
   document.querySelectorAll(".zone").forEach(el => el.classList.remove("active"));
   const zoneEl = svgOverlay.querySelector(`[data-id="${zone.id}"]`);
   if (zoneEl) zoneEl.classList.add("active");
+  cacherCoins(zone.id);
   zoneActive = zone.id;
 
   panneau.classList.add("ouvert");
 
-fetch(zone.article.fichier)
+  fetch(zone.article.fichier)
     .then(r => r.text())
     .then(html => {
       panneauContenu.innerHTML = `
@@ -149,7 +202,12 @@ fetch(zone.article.fichier)
         ${html}
       `;
     });
+
   setTimeout(() => zoomVersZone(zone), 350);
+  // Retirer les classes de catégorie précédentes
+panneau.className = panneau.className.replace(/zone-cat-\S+/g, "").trim();
+// Ajouter la catégorie courante
+if (zone.categorie) panneau.classList.add(`zone-cat-${zone.categorie}`);
 }
 
 function zoomVersZone(zone) {
@@ -159,25 +217,15 @@ function zoomVersZone(zone) {
   const imgH = item.source.height;
   const ratio = imgH / imgW;
 
-  // Le panneau prend 50% de l'écran
-  // La zone visible pour la carte = 50% de l'écran à gauche
   const fractionVisible = 0.5;
 
-  // Zoom pour que la zone tienne dans les 50% visibles
-  // En coordonnées viewport OSD, l'image entière fait une largeur de 1
-    const zoomPourLargeur = fractionVisible / zone.width;
-    const zoomPourHauteur = (window.innerHeight / window.innerWidth) / (zone.height * ratio);
-    const zoomCible       = Math.min(zoomPourLargeur, zoomPourHauteur);
+  const zoomPourLargeur = fractionVisible / zone.width;
+  const zoomPourHauteur = (window.innerHeight / window.innerWidth) / (zone.height * ratio);
+  const zoomCible       = Math.min(zoomPourLargeur, zoomPourHauteur);
 
-  // Centre de la zone en coordonnées viewport
   const centreZoneX = zone.x + zone.width  / 2;
   const centreZoneY = (zone.y + zone.height / 2) * ratio;
 
-  // OSD centre sur le point donné au milieu de l'écran ENTIER
-  // On veut que la zone soit centrée dans la moitié gauche
-  // Donc on décale le point de centrage vers la droite de 25% de la largeur viewport
-  // (car le centre de la moitié gauche est à 25% de la largeur totale)
-  // En coordonnées viewport : 0.25 / zoomCible
   const decalage = 0.25 / zoomCible;
   const centreAjuste = new OpenSeadragon.Point(
     centreZoneX + decalage,
@@ -192,12 +240,70 @@ function retourAccueil() {
   viewer.viewport.goHome(false);
   panneau.classList.remove("ouvert");
   document.querySelectorAll(".zone").forEach(el => el.classList.remove("active"));
+  if (zoneActive) cacherCoins(zoneActive);
   zoneActive = null;
 }
 
 btnFermer.addEventListener("click", retourAccueil);
 document.getElementById("zone-prev").addEventListener("click", () => naviguerZone(-1));
 document.getElementById("zone-next").addEventListener("click", () => naviguerZone(1));
+
+/* ── Sommaire ── */
+const sommaire     = document.getElementById("sommaire");
+const btnArticles  = document.getElementById("articles");
+let sommaireOuvert = false;
+
+const COL = { article: 1, recit: 2, glitch: 3 };
+
+function construireSommaire() {
+  const grille = document.getElementById("sommaire-grille");
+  grille.innerHTML = "";
+
+  const n = zones.length;
+  grille.style.gridTemplateRows = `repeat(${n}, 1fr)`;
+
+  const fontSize = `calc((100vh - 72px) / ${n} * 0.52)`;
+  grille.style.fontSize = fontSize;
+
+  zones.forEach((zone, i) => {
+    const item = document.createElement("div");
+    item.className = "sommaire-item";
+    item.style.gridRow    = i + 1;
+    item.style.gridColumn = COL[zone.categorie] || 1;
+
+    const titre = document.createElement("span");
+    titre.className = `sommaire-titre cat-${zone.categorie}`;
+    titre.textContent = zone.article.titre;
+
+    const sousTitre = document.createElement("span");
+    sousTitre.className = "sommaire-sous-titre";
+    sousTitre.textContent = zone.article.sous_titre;
+
+    item.appendChild(titre);
+    item.appendChild(sousTitre);
+    item.addEventListener("click", () => {
+      fermerSommaire();
+      ouvrirZone(zone);
+    });
+
+    grille.appendChild(item);
+  });
+}
+
+function ouvrirSommaire() {
+  sommaire.classList.add("ouvert");
+  sommaireOuvert = true;
+}
+
+function fermerSommaire() {
+  sommaire.classList.remove("ouvert");
+  sommaireOuvert = false;
+}
+
+btnArticles.addEventListener("click", () => {
+  if (sommaireOuvert) fermerSommaire();
+  else ouvrirSommaire();
+});
 
 function naviguerZone(direction) {
   if (!zones.length) return;
@@ -207,10 +313,13 @@ function naviguerZone(direction) {
 }
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") retourAccueil();
+  if (e.key === "Escape") {
+    retourAccueil();
+    fermerSommaire();
+  }
 });
 
-/* ── 7. Resize ── */
+/* ── 8. Resize ── */
 window.addEventListener("resize", () => {
   recalculerOverlay();
   if (zoneActive) {

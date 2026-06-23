@@ -1,10 +1,10 @@
 [
   {
     "id": "zone-01",
+    "categorie": "article",
     "label": "Hypermodernité",
     "resume": "Arpentage de ZAC Ivry confluence...",
     "x": 0.02, "y": 0.02, "width": 0.18, "height": 0.18,
-
   "article": {
     "titre": "Hypermodernité",
     "sous_titre": "La ville poussière",
@@ -14,6 +14,7 @@
 
 {
   "id": "zone-02",
+  "categorie": "glitch",
   "label": "Retisser les liens",
   "resume": "Tisser des liens entre histoires de lieux, d'économie et de travailleurs séparées par la logique néolibérale.",
   "x": 0.22, "y": 0.02, "width": 0.18, "height": 0.18,
@@ -26,6 +27,7 @@
 
 {
   "id": "zone-03",
+  "categorie": "recit",
   "label": "Tomber dans la poudre",
   "resume": "45 rue Bruneseau, Paris 13 — visite du centre de distribution de ciment.",
   "x": 0.42, "y": 0.02, "width": 0.18, "height": 0.18,
@@ -34,6 +36,199 @@
     "sous_titre": "Centre de distribution",
     "fichier": "./articles/zone-03.html"
   }
-}
+},
 
+{
+  "id": "zone-04",
+  "categorie": "glitch",
+  "label": "Drive Béton",
+  "resume": "Des stations de chargement de béton prêt à l'emploi en libre-service pour les particuliers.",
+  "x": 0.62, "y": 0.02, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Drive Béton",
+    "sous_titre": "Le béton comme ton paquet de pâtes",
+    "fichier": "./articles/zone-04.html"
+  }
+},
+
+{
+  "id": "zone-05",
+  "categorie": "article",
+  "label": "Perdus dans la poubelle",
+  "resume": "Co-incinération des déchets dans les fours de cimenterie — économie du déchet-combustible.",
+  "x": 0.82, "y": 0.02, "width": 0.16, "height": 0.18,
+  "article": {
+    "titre": "Perdus dans la poubelle",
+    "sous_titre": "Co-incinérer des déchets pour économiser",
+    "fichier": "./articles/zone-05.html"
+  }
+},
+{
+  "id": "zone-06",
+  "categorie": "glitch",
+  "label": "Pont Wilson",
+  "resume": "1978 — l'extraction de granulats cause l'effondrement partiel du pont Wilson à Tours.",
+  "x": 0.02, "y": 0.22, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "1978 : Pont Wilson",
+    "sous_titre": "Quand la matière première cause l'effondrement",
+    "fichier": "./articles/zone-06.html"
+  }
+},
+{
+  "id": "zone-07",
+  "categorie": "article",
+  "label": "Panbetonnisme",
+  "resume": "Le métro parisien, charnière de la mécanisation du chantier et de l'hégémonie du béton.",
+  "x": 0.22, "y": 0.22, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Panbetonnisme",
+    "sous_titre": "L'alliance normes industrie et science",
+    "fichier": "./articles/zone-07.html"
+  }
+},
+{
+  "id": "zone-08",
+  "categorie": "glitch",
+  "label": "Sway Tower",
+  "resume": "Peterson's Tower, 1879 — le plus haut édifice en béton non armé, une folie désarmée.",
+  "x": 0.42, "y": 0.22, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Sway Tower",
+    "sous_titre": "La folie Désarmée",
+    "fichier": "./articles/zone-08.html"
+  }
+},
+{
+  "id": "zone-09",
+  "categorie": "recit",
+  "label": "La cimenterie de Couvrot",
+  "resume": "Visite de la cimenterie Heidelberg Materials — Couvrot, Marne, Grand Est.",
+  "x": 0.62, "y": 0.22, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "La poussière qui monte à la tête",
+    "sous_titre": "La cimenterie de Couvrot",
+    "fichier": "./articles/zone-09.html"
+  }
+},
+{
+  "id": "zone-10",
+  "categorie": "glitch",
+  "label": "Grève à Couvrot",
+  "resume": "2023 — grève d'un mois contre la pression patronale et l'automatisation à la cimenterie.",
+  "x": 0.82, "y": 0.22, "width": 0.16, "height": 0.18,
+  "article": {
+    "titre": "Grève à Couvrot",
+    "sous_titre": "La machine du capital contre l'ouvrier",
+    "fichier": "./articles/zone-10.html"
+  }
+},
+{
+  "id": "zone-11",
+  "categorie": "article",
+  "label": "Superstructure des colonies",
+  "resume": "Le ciment Portland dans les territoires colonisés — aspiration, hybridation, imposition.",
+  "x": 0.02, "y": 0.42, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Superstructure des colonies",
+    "sous_titre": "Aspiration, Hybridation, Imposition",
+    "fichier": "./articles/zone-11.html"
+  }
+},
+{
+  "id": "zone-12",
+  "categorie": "article",
+  "label": "Impérialisme",
+  "resume": "Après les indépendances — Cimtogo, Hanson Israel, et la reconfiguration de l'impérialisme.",
+  "x": 0.22, "y": 0.42, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Impérialisme",
+    "sous_titre": "L'incessante reconfiguration",
+    "fichier": "./articles/zone-12.html"
+  }
+},
+{
+  "id": "zone-13",
+  "categorie": "glitch",
+  "label": "Maison NKD",
+  "resume": "Worofila, Dakar — briques de latérite et résistance par la construction biosourcée.",
+  "x": 0.42, "y": 0.42, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Maison NKD, Worofila",
+    "sous_titre": "Hybridation constructive",
+    "fichier": "./articles/zone-13.html"
+  }
+},
+{
+  "id": "zone-14",
+  "categorie": "glitch",
+  "label": "Le Point Haut",
+  "resume": "Tours — une grande halle industrielle transformée en lieu culturel, chantier spectaculaire.",
+  "x": 0.62, "y": 0.42, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Le Point Haut",
+    "sous_titre": "Le chantier spectaculaire",
+    "fichier": "./articles/zone-14.html"
+  }
+},
+{
+  "id": "zone-15",
+  "categorie": "glitch",
+  "label": "Maçonnerie postcapitaliste",
+  "resume": "Moellons de récupération, mortier de tuileau — techniques effacées par le ciment Portland.",
+  "x": 0.82, "y": 0.42, "width": 0.16, "height": 0.18,
+  "article": {
+    "titre": "Maçonnerie postcapitaliste",
+    "sous_titre": "Monter les murs écroulés",
+    "fichier": "./articles/zone-15.html"
+  }
+},
+{
+  "id": "zone-16",
+  "categorie": "glitch",
+  "label": "Imaginaire hybridé",
+  "resume": "Hybrider le parpaing pour imaginer sa déconstruction — assemblages désarmés.",
+  "x": 0.02, "y": 0.62, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Imaginaire hybridé",
+    "sous_titre": "Assemblage désarmé de produits industriels",
+    "fichier": "./articles/zone-16.html"
+  }
+},
+{
+  "id": "zone-17",
+  "categorie": "glitch",
+  "label": "La plongée",
+  "resume": "Réalisme capitaliste (Fisher), économie libidinale (Lyotard) — apercevoir une porte de sortie.",
+  "x": 0.22, "y": 0.62, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "La plongée",
+    "sous_titre": "Apercevoir une porte de sortie",
+    "fichier": "./articles/zone-17.html"
+  }
+},
+{
+  "id": "zone-18",
+  "categorie": "glitch",
+  "label": "La quantité",
+  "resume": "La chaux comme alternative — reconversion des fours rotatifs de cimenterie.",
+  "x": 0.42, "y": 0.62, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "La quantité",
+    "sous_titre": "Quelle production ?",
+    "fichier": "./articles/zone-18.html"
+  }
+},
+{
+  "id": "zone-19",
+  "categorie": "glitch",
+  "label": "Le réseau distribué",
+  "resume": "Peer-to-peer et holoptisme — pirater le réseau dématérialisé de l'industrie cimentière.",
+  "x": 0.62, "y": 0.62, "width": 0.18, "height": 0.18,
+  "article": {
+    "titre": "Le réseau distribué",
+    "sous_titre": "Transformation internationaliste",
+    "fichier": "./articles/zone-19.html"
+  }
+}
 ]
