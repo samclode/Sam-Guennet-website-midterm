@@ -416,6 +416,40 @@ text-shadow: -3px -4px 0 rgb(167, 195, 101) !important;
 #articles:hover{
   text-decoration: underline;
 }
+
+/* ─── Loading overlay ──────────────────────────────── */
+#loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+#loading-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#loading-text {
+  font-family: 'escabeau';
+  font-size: 6rem;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  line-height: 0.7;
+  animation: shadow-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { text-shadow: none; }
+  50%       { text-shadow: -5px -6px 0 rgb(59, 166, 241); }
+}
+
  /* ─── Gérer les appareils ──────────────────────────────── */
 #blocage-mobile,
 #blocage-portrait {

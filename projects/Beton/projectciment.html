@@ -9,6 +9,7 @@
 <link href="../unkapani/projectunkapanistyles.css" rel="stylesheet"/>
 <link href="../../general/barrenavmobile.css" rel="stylesheet"/>
 <link href="../unkapani/projetsmobilestyles.css" rel="stylesheet"/>
+<link href="./projectcimentstyles.css" rel="stylesheet"/>
 <title>Sam Guennet</title>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -58,12 +59,9 @@
 <p>From a mill to a craftperson residency</p>
 </div>
 <div class="bodyarticle">
-<p>An artist's residency has been set up in an old mill that has been largely destroyed. The idea was to leave the original brick buildings as they were, and to build a new metal structure inside them. The large central courtyard is now the home of the site: exhibition pavilion, workshop, public and event space. Built in concrete, this new addition follows the pre-existing industrial language but stands out for its monolithic treatment.</p>
+<p>Starting with a visit to Silo 13, a cement distribution centre located in the 12th arrondissement, the aim is to trace the cement supply chain in France and around the world. This analysis seeks to highlight the changes taking place within the industry, the new image it is cultivating, the complexity of the historical relationship with the material, and the global imposition of the neoliberal system.</p>
 <br/>
-<p>The old buildings now house residents' living areas, shops, offices and a cafeteria.</p>
-<br/>
-<p>Orange : existing building</p>
-<p>gray : intervention</p>
+<p>Following a second visit to the Couvrot cement works, it now seems clear that the production system, the economic and political regime, and the formalisation of architecture are interdependent and cannot be understood in isolation from one another. The second phase of the project therefore consists of reconstructing the historical and cognitive links between these three aspects, in order to gain a comprehensive understanding of what cement is and what it generates. Finally, drawing on the approach of the author Mark Fisher, the project highlights the gaps, dysfunctions and subvertions within the current system, which offer a glimpse of the possibility of cement production in a post-capitalist context.</p>
 </div>
 </div>
 <div class="maintext lang-fr">
@@ -74,12 +72,9 @@
 <p>Anatomie de la production du Paris mondialisé</p>
 </div>
 <div class="bodyarticle">
-<p>Une résidence d’artisans a été installée dans un ancien moulin en grande partie détruit. Les ruines restent telles quelles, conservées par la consolidation intérieure de la nouvelle structure. La grande cour centrale contient désormais deux structures à la destination volontairement floue : pavillon d’exposition, atelier, espace public et espace événementiel. Construite en béton, cette nouvelle annexe suit le langage industriel préexistant mais se distingue par son traitement monolithique. Une grille tri dimensionnelle construite tel un échafaudage permet une appropriation du lieu, comme une extension qu’il reste a prévoir. </p>
+<p>A partir de la visite du silo13, centre de distribution de ciment situé dans le 12e arrondissement, l’objectif est de remonter la filière du ciment en France et à travers le monde. Cette analyse tend à mettre en lumière les mutations de l’industrie, la nouvelle image qu’elle se construit, et la complexité du rapport historique au matériau, et à l’imposition mondiale du système néolibéral.</p>
 <br/>
-<p>Les anciens bâtiments abritent désormais les espaces de vie des résidents, des commerces, des bureaux et une cafétéria.</p>
-<br/>
-<p>Orange : bâtiment existant</p>
-<p>gris : intervention</p>
+<p>Après une seconde visite, dans la cimenterie de Couvrot, il parait désormais clair que le système de production, le régime économico-politique et la formalisation de l’architecture sont codépendants, et ne peuvent être lus les uns sans les autres. La seconde phase du projet consiste donc à reconstituer les liens historico-cognitifs de ces trois aspects, afin d’acquérir une vision globale de ce qui est le ciment et de ce qu’il génère. Enfin, dans une démarche empruntée à l’auteur Mark Fisher, le projet met en avant des brèches, dysfonctionnements et détournements du système actuel, qui laissent entrevoir la possibilité d’une production du ciment dans un contexte postcapitaliste. </p>
 </div>
 </div>
 <div class="plusinfos lang-en">
@@ -106,6 +101,14 @@
 <p>Camarade : Nour Pleutin</p>
 </div>
 </div>
+
+<div class="exp lang-fr">
+    <a href="../../experiencebeton/indexexperiencebeton.html" id="expc-fr">Bouffée Beton</a>
+</div>
+<div class="exp lang-en">
+    <a href="../../experiencebeton/indexexperiencebeton.html" id="expc-en">Breath Concrete</a>
+</div>
+
 <div class="pull-next-indicator lang-fr" data-next="../ordinaryheritage/projectordinaryheritage.html">
 <span class="icon">↓</span> Tirez pour voir Constater le patrimoine ordinaire
 </div>
@@ -119,5 +122,11 @@
 <script src="../../projects/unkapani/scroll.js"></script>
 <script src="../conservatory/safaridetect.js"></script>
 <script src="../conservatory/changepage.js"></script>
+<script>
+document.querySelectorAll('.exp').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('exp-hovered'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('exp-hovered'));
+});
+</script>
 </body>
 </html>

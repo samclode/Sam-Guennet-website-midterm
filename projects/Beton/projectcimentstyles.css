@@ -1,5 +1,46 @@
 
+@font-face {
+    font-family: 'escabeau';
+    src: url('../../experiencebeton/fonts/Escabeau.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 ::selection {
   background: #000000;
   color: #ea5239;
+}
+.exp {
+font-family: 'escabeau';
+font-size: 6rem;
+letter-spacing: 0.01em;
+line-height: 0.7;
+position: fixed;
+top: 50%;
+transform: translateY(-50%);
+left: 3vw;
+width: 30vw;
+transition: text-shadow 0s 0.3s;
+}
+
+.exp:hover {
+  color: #ffffff;
+  text-shadow: -5px -6px 0 rgb(59, 166, 241);
+}
+
+
+body {
+  transition: background-color 0.15s ease;
+}
+
+body.exp-hovered {
+  background-color: #000000 !important;
+}
+
+body.exp-hovered > *:not(.exp) {
+  opacity: 0;
+  pointer-events: none;
+}
+.maincontainer img {
+  display: none;
 }

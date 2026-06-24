@@ -327,3 +327,14 @@ window.addEventListener("resize", () => {
     if (zone) zoomVersZone(zone);
   }
 });
+
+/* ── 9. Loading overlay ── */
+const loadingOverlay = document.getElementById('loading-overlay');
+
+function hideLoadingOverlay() {
+  viewer.removeHandler('tile-drawn', hideLoadingOverlay);
+  loadingOverlay.classList.add('fade-out');
+  setTimeout(() => loadingOverlay.remove(), 650);
+}
+
+viewer.addHandler('tile-drawn', hideLoadingOverlay);
