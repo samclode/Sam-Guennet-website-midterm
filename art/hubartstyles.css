@@ -214,7 +214,17 @@ a:hover {
 .mosaic-item-wrapper:hover .preview {
     display: block;
   }
-  
+
+#spanmoregravure{
+    grid-column: span 2;
+    display: grid;
+}
+#ratiogravkapa{
+    aspect-ratio: 2/0.9555;
+    aspect-ratio: 2/0.9555;
+    display: grid;
+
+}
 #spanmore1{
     grid-column: span 2;
     display: grid;
