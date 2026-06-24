@@ -332,9 +332,24 @@ window.addEventListener("resize", () => {
 const loadingOverlay = document.getElementById('loading-overlay');
 
 function hideLoadingOverlay() {
-  viewer.removeHandler('tile-drawn', hideLoadingOverlay);
   loadingOverlay.classList.add('fade-out');
   setTimeout(() => loadingOverlay.remove(), 650);
 }
 
-viewer.addHandler('tile-drawn', hideLoadingOverlay);
+viewer.addHandler('open', function() {
+  const tiledImage = viewer.world.getItemAt(0);
+  const fallback = setTimeout(hideLoadingOverlay, 6000);
+
+  if (tiledImage && tiledImage.getFullyLoaded()) {
+    clearTimeout(fallback);
+    hideLoadingOverlay();
+  } else if (tiledImage) {
+    tiledImage.addHandler('fully-loaded-change', function onLoaded(e) {
+      if (e.fullyLoaded) {
+        tiledImage.removeHandler('fully-loaded-change', onLoaded);
+        clearTimeout(fallback);
+        hideLoadingOverlay();
+      }
+    });
+  }
+});
