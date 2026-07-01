@@ -20,7 +20,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #000000;
+  background: #ffffff;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--blanc);
 }
@@ -399,7 +399,7 @@ text-shadow: -3px -4px 0 rgb(167, 195, 101) !important;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.01em;
-  color: #ffffff;
+  color: #000000;
   margin-left: 20px;
   margin-top: 10px;
 
@@ -444,6 +444,7 @@ text-shadow: -3px -4px 0 rgb(167, 195, 101) !important;
   line-height: 0.7;
   animation: shadow-pulse 1.4s ease-in-out infinite;
 }
+
 
 @keyframes shadow-pulse {
   0%, 100% { text-shadow: none; }
