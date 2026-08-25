@@ -297,7 +297,7 @@ a:hover {
 #name {display: none;}
 
 .links{
-    display: none;
+    display:block;
 }
 ::selection {
   background: #000000;
